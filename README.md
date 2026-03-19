@@ -11,7 +11,7 @@
   - [Samples](#samples)
 - [Data preprocessing](#data-preprocessing)
   - [Convert to float32](#convert-to-float32)
-  - [Normalize (divide by 255)](#normalize-divide-by-255)
+  - [Normalise (divide by 255)](#normalisedivide-by-255)
   - [One-hot encoding of labels](#one-hot-encoding-of-labels)
 - [Classification Techniques](#classification-techniques)
   - [LeNet](#lenet)
@@ -32,8 +32,10 @@ The LeNet model, pioneered by Yann LeCun, is an early and influential CNN archit
 #### VGGNet Model
 VGGNet, developed by the Visual Graphics Group at Oxford, is known for its simplicity and depth. The model comprises stacked convolutional layers with small receptive fields, followed by max-pooling layers.
 ## Dataset
-[ciFAIR](https://cvjena.github.io/cifair/)
+[ciFAIR](https://cvjena.github.io/cifair/) 
+
 [Download](https://github.com/cvjena/cifair/releases/download/v1.0/ciFAIR-10.zip)
+
 We use ciFAIR-10, a cleaned version of CIFAR-10 with a duplicate-free test set.
 
 ### Classes:
