@@ -14,7 +14,7 @@
   - [Normalize (divide by 255)](#normalize-divide-by-255)
   - [One-hot encoding of labels](#one-hot-encoding-of-labels)
 - [Classification Techniques](#classification-techniques)
-  - [LeNET](#lenet)
+  - [LeNet](#lenet)
     - [Layers](#layers)
     - [Training parameters](#training-parameters)
     - [Performance](#performance)
@@ -32,16 +32,21 @@ The LeNet model, pioneered by Yann LeCun, is an early and influential CNN archit
 #### VGGNet Model
 VGGNet, developed by the Visual Graphics Group at Oxford, is known for its simplicity and depth. The model comprises stacked convolutional layers with small receptive fields, followed by max-pooling layers.
 ## Dataset
+[ciFAIR](https://cvjena.github.io/cifair/)
+[Download](https://github.com/cvjena/cifair/releases/download/v1.0/ciFAIR-10.zip)
 We use ciFAIR-10, a cleaned version of CIFAR-10 with a duplicate-free test set.
+
 ### Classes:
 | airplane | automobile | bird | cat | deer |
 |----------|------------|------|-----|------|
 | dog      | frog       | horse| ship| truck|
 ### Image size:
-32 x 32 x 3
+```32 x 32 x 3```
 ### Samples
-Train: 50000
-Test: 10000
+| Dataset | Samples |
+|---------|---------|
+| Train   | 50000   |
+| Test    | 10000   |
 ## Data preprocessing
 ### Convert to float32
 ```
@@ -49,7 +54,7 @@ Test: 10000
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
 ```
-### NNormalise(divide by 255)
+### Normalise(divide by 255)
 ```
 # Normalise the data
 x_train /= 255
