@@ -1,4 +1,28 @@
 # Image Classification with Convolutional Neural Networks (CNN)
+## Table of Contents
+
+- [Overview](#overview)
+- [Project Description](#project-description)
+  - [LeNet Model](#lenet-model)
+  - [VGGNet Model](#vggnet-model)
+- [Dataset](#dataset)
+  - [Classes](#classes)
+  - [Image size](#image-size)
+  - [Samples](#samples)
+- [Data preprocessing](#data-preprocessing)
+  - [Convert to float32](#convert-to-float32)
+  - [Normalize (divide by 255)](#normalize-divide-by-255)
+  - [One-hot encoding of labels](#one-hot-encoding-of-labels)
+- [Classification Techniques](#classification-techniques)
+  - [LeNET](#lenet)
+    - [Layers](#layers)
+    - [Training parameters](#training-parameters)
+    - [Performance](#performance)
+  - [VGGNet](#vggnet)
+    - [Layers](#layers-1)
+    - [Training parameters](#training-parameters-1)
+    - [Performance](#performance-1)
+- [Comparison](#comparison)
 ## Overview
 Image classification is a critical task in computer vision applications, enabling machines to recognise and categorise images accurately. Over the years, there has been a remarkable evolution in image classification algorithms, transitioning from traditional feature-based methods to more advanced deep learning-based techniques. Among these, Convolutional Neural Networks (CNNs) have emerged as a standout success story, significantly improving classification accuracy.
 ### Project Description
@@ -21,13 +45,13 @@ Test: 10000
 ## Data preprocessing
 ### Convert to float32
 ```
-# Connvert data type to float for computation
+# Convert data type to float for computation
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
 ```
-### Normalize (divide by 255)
+### NNormalise(divide by 255)
 ```
-# Normalize the data
+# Normalise the data
 x_train /= 255
 x_test /= 255
 ```
@@ -50,8 +74,29 @@ y_test = keras.utils.to_categorical(y_test, num_classes)
 | Optimizer | Adam |
 | Loss | categorical_crossentropy |
 #### Performance
-![LeNet Grapt](Images/LeNet_Graph.png)
+##### Plotting Curves
+![LeNet Graph](Images/LeNet_Graph.png)
+##### Confusion Matrix
 ![LeNet Matrix](Images/LeNet_Matrix.png)
+##### Classification report
+```
+              precision    recall  f1-score   support
+
+           0       0.62      0.72      0.67      1000
+           1       0.70      0.70      0.70      1000
+           2       0.54      0.51      0.52      1000
+           3       0.44      0.40      0.42      1000
+           4       0.61      0.49      0.54      1000
+           5       0.48      0.56      0.52      1000
+           6       0.73      0.63      0.67      1000
+           7       0.64      0.70      0.67      1000
+           8       0.71      0.73      0.72      1000
+           9       0.67      0.69      0.68      1000
+
+    accuracy                           0.61     10000
+   macro avg       0.61      0.61      0.61     10000
+weighted avg       0.61      0.61      0.61     10000
+```
 ### VGGNet
 #### Layers
 ```
@@ -83,7 +128,33 @@ y_test = keras.utils.to_categorical(y_test, num_classes)
 | Optimizer | Adam |
 | Loss | categorical_crossentropy |
 #### Performance
-![VGG Grapt](Images/VGG_Graph.png)
+##### Plotting Curves
+![VGG Graph](Images/VGG_Graph.png)
+##### Confusion Matrix
 ![VGG Matrix](Images/VGG_Matrix.png)
+##### Classification report
+```
+              precision    recall  f1-score   support
+
+           0       0.80      0.79      0.80      1000
+           1       0.90      0.88      0.89      1000
+           2       0.61      0.73      0.67      1000
+           3       0.57      0.59      0.58      1000
+           4       0.79      0.67      0.72      1000
+           5       0.77      0.62      0.68      1000
+           6       0.71      0.87      0.78      1000
+           7       0.88      0.78      0.83      1000
+           8       0.86      0.87      0.87      1000
+           9       0.85      0.89      0.87      1000
+
+    accuracy                           0.77     10000
+   macro avg       0.77      0.77      0.77     10000
+weighted avg       0.77      0.77      0.77     10000
+```
 ## Comparison
 ![LeNet vs VGG](Images/LeNet_vs_VGG.png)
+### Final Accuracy
+| Model | Accuracy |
+|--------|----------|
+| LeNet | 61% |
+| VGGNet | 77% |
