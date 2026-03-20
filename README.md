@@ -72,7 +72,27 @@ y_test = keras.utils.to_categorical(y_test, num_classes)
 ## Classification Techniques
 ### LeNET
 #### Layers
-```Conv2D(6,5x5) → MaxPooling → Conv2D(16,5x5) → MaxPooling → Flatten → Dense120 → Dense84 → Dense10```
+```
+[Input]
+   ↓
+[Conv2D 6 (5×5)]
+   ↓
+[MaxPooling]
+   ↓
+[Conv2D 16 (5×5)]
+   ↓
+[MaxPooling]
+   ↓
+[Flatten]
+   ↓
+[Dense 120]
+   ↓
+[Dense 84]
+   ↓
+[Dense 1]
+   ↓
+[Output]
+```
 #### Training parameters
 | Parameter | Value |
 |----------|--------|
