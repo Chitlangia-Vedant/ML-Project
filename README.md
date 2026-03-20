@@ -3,10 +3,46 @@
 
 Referenced paper: [Text Classification Algorithms: A Survey](https://arxiv.org/abs/1904.08067)
 
----
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Text and Document Feature Extraction](#text-and-document-feature-extraction)
+  - [Text Cleaning and Pre-processing](#text-cleaning-and-pre-processing)
+    - [Tokenization](#tokenization)
+    - [Stop Words](#stop-words)
+    - [Capitalization](#capitalization)
+    - [Noise Removal](#noise-removal)
+  - [Weighted Words](#weighted-words)
+    - [Term Frequency](#term-frequency)
+    - [Term Frequency-Inverse Document Frequency](#term-frequency-inverse-document-frequency)
+- [Text Classification Techniques](#text-classification-techniques)
+  - [Naive Bayes Classifier](#naive-bayes-classifier)
+  - [K-nearest Neighbor](#k-nearest-neighbor)
+  - [Support Vector Machine (SVM)](#support-vector-machine-svm)
+  - [Decision Tree](#decision-tree)
+  - [Random Forest](#random-forest)
+  - [Comparison of Text Classification Algorithms](#comparison-of-text-classification-algorithms)
+- [Evaluation](#evaluation)
+  - [Confusion Matrix](#confusion-matrix)
+  - [F1 Score](#f1-score)
+- [Dataset](#dataset)
+  - [IMDB](#imdb)
+- [Text Classification Applications](#text-classification-applications)
+  - [Information Retrieval](#information-retrieval)
+  - [Information Filtering](#information-filtering)
+  - [Sentiment Analysis](#sentiment-analysis)
+  - [Recommender Systems](#recommender-systems)
+  - [Knowledge Management](#knowledge-management)
+  - [Document Summarization](#document-summarization)
+- [Text Classification Support](#text-classification-support)
+  - [Health](#health)
+  - [Social Sciences](#social-sciences)
+  - [Business and Marketing](#business-and-marketing)
+  - [Law](#law)
+    
 ## Introduction
 ![Overview of Text Classification](Images/OverviewTextClassification.png)
----
+
 ## Text and Document Feature Extraction
 
 Text feature extraction and pre-processing for classification algorithms are very significant. In this section, we begin discussing text cleaning, since most documents contain a lot of noise. In this part, we discuss two primary methods of text feature extractions — word embedding and weighted word.
@@ -376,8 +412,6 @@ Random Forest Confusion Matrix
 | **Decision Tree**                | Handles categorical features; Works well with parallel decision boundaries; Fast for learning and prediction | Issues with diagonal decision boundaries; Easily overfit; Extremely sensitive to small perturbations; Problems with out-of-sample prediction |
 | **Random Forest**                | Very fast to train; Reduced variance relative to regular trees; No data preparation required                 | Slow to create predictions; More trees increase time complexity; Less interpretable; Prone to overfitting; Must choose number of trees       |
 
----
-
 ## Evaluation
 ### Confusion Matrix
 A Confusion Matrix is a table used to evaluate the performance of a classification model. It summarizes the correct and incorrect predictions broken down by each class.
@@ -393,7 +427,9 @@ A Confusion Matrix is a table used to evaluate the performance of a classificati
 - False Negative (FN): Incorrectly predicted as negative (Type II error
 ### F1 Score
 The F1 Score is the harmonic mean of Precision and Recall, providing a single metric that balances both. It is especially useful when the class distribution is uneven.
+
 ![F1 Score](Images/F1.png)
+
 Key metrics:
 - Precision: Of all predicted positives, how many were actually positive?
 - Recall: Of all actual positives, how many were correctly predicted?
@@ -464,8 +500,6 @@ Text classification used for document summarizing which summary of a document ma
 
 - 🎓 [Advances in automatic text summarization](https://books.google.com/books?hl=en&lr=&id=YtUZQaKDmzEC&oi=fnd&pg=PA215&dq=Advances+in+automatic+text+summarization&ots=ZpvCsrG-dC&sig=8ecTDTrQR4mMzDnKvI58sowh3Fg) — Mani, Inderjeet.
 - 🎓 [Improving Multi-Document Summarization via Text Classification](https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/viewPaper/14525) — Cao, Ziqiang, et al. (2017).
-
----
 
 ## Text Classification Support
 ### Health
