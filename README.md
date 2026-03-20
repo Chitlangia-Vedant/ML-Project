@@ -6,6 +6,7 @@ Referenced paper: [Text Classification Algorithms: A Survey](https://arxiv.org/a
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Architecture](#architecture)
 - [Text and Document Feature Extraction](#text-and-document-feature-extraction)
   - [Text Cleaning and Pre-processing](#text-cleaning-and-pre-processing)
     - [Tokenization](#tokenization)
@@ -43,6 +44,47 @@ Referenced paper: [Text Classification Algorithms: A Survey](https://arxiv.org/a
 ## Introduction
 ![Overview of Text Classification](Images/OverviewTextClassification.png)
 
+## Architecture
+```mermaid
+flowchart TD
+    A([Start]) --> B[Raw CSV dataset]
+    B --> C[Text cleaning]
+
+    subgraph C[Text cleaning]
+        C1[Lowercasing] 
+        C2[Noise removal - regex]
+        C3[Stop word removal]
+        C4[Tokenization]
+        C5[Punctuation removal]
+    end
+
+    C --> D[Feature extraction]
+
+    subgraph D[Feature extraction]
+        D1[CountVectorizer - BoW]
+        D2[TF-IDF weighting]
+        D3[Sparse feature matrix]
+        D1 --> D2 --> D3
+    end
+
+    D --> E[Train / test split]
+    E --> F[Linear SVC]
+    E --> G[Random Forest]
+    E --> H[KNN]
+    E --> I[Decision Tree]
+    E --> J[Naive Bayes]
+    E --> K[Improved SVC]
+    F & G & H & I & J & K --> L[Evaluation]
+
+    subgraph L[Evaluation]
+        L1[F1 score]
+        L2[Confusion matrix]
+        L3[Classification report]
+    end
+
+    L --> M[Final prediction]
+    M --> N([End])
+```
 ## Text and Document Feature Extraction
 
 Text feature extraction and pre-processing for classification algorithms are very significant. In this section, we begin discussing text cleaning, since most documents contain a lot of noise. In this part, we discuss two primary methods of text feature extractions — word embedding and weighted word.
