@@ -184,4 +184,4 @@ weighted avg       0.77      0.77      0.77     10000
 | Model | Accuracy |
 |--------|----------|
 | LeNet | 61% |
-| VGGNet | 93% |
+| VGGNet | 77% |
