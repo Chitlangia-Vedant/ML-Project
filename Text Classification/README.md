@@ -487,6 +487,7 @@ Key metrics:
 
 - [IMDB Dataset](http://ai.stanford.edu/~amaas/data/sentiment/)
 - [Download Link](https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz)
+- [File](imdb_data.csv)
 
 This is a dataset for binary sentiment classification containing substantially more data than previous benchmark datasets. It provides a set of 25,000 highly polar movie reviews for training, and 25,000 for testing. There is additional unlabeled data for use as well. Raw text and already processed bag of words formats are provided. Dataset of 25,000 movies reviews from IMDB, labeled by sentiment (positive/negative). Reviews have been preprocessed, and each review is encoded as a sequence of word indexes (integers). For convenience, words are indexed by overall frequency in the dataset, so that for instance the integer "3" encodes the 3rd most frequent word in the data.
 
